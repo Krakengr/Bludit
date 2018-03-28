@@ -1,0 +1,10 @@
+{
+	"plugin-data":
+	{
+		"name": "Popular Posts",
+		"description": "A simple plugin to show popular posts in sidebar"
+	},
+	"label": "Label",
+	"label-tip": "This it the title for the Widget.",
+	"items": "Number of items"
+}
