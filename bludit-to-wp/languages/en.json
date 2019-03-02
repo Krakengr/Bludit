@@ -1,0 +1,8 @@
+{
+	"plugin-data":
+	{
+		"name": "Bludit to Wordpress Converter",
+		"description": "Export Bludit Data to a WordPress eXtended RSS file."
+	},
+	"export-site": "Export my site"
+}
