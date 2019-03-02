@@ -1,0 +1,9 @@
+{
+	"author": "Kraken",
+	"website": "https://en.homebrewgr.info/",
+	"version":"1.0",
+	"releaseDate": "2019-01-20",
+	"license": "MIT",
+	"compatible": "3.8",
+	"notes": ""
+}
