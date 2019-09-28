@@ -1,10 +1,10 @@
 {
-	"author": "Kraken",
+	"author": "Bludit",
 	"email": "",
-	"website": "https://en.homebrewgr.info/",
-	"version": "1.0",
-	"releaseDate": "2019-12-20",
+	"website": "https://plugins.bludit.com",
+	"version": "3.9.2",
+	"releaseDate": "2019-06-21",
 	"license": "MIT",
-	"compatible": "3.8",
+	"compatible": "3.9.2",
 	"notes": ""
 }
