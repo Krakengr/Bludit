@@ -1,0 +1,14 @@
+{
+	"plugin-data":
+	{
+		"name": "Cache",
+		"description": "When you turn on Cache Plugin, page caching is immediately activated for ultra-fast load time, essential for improving Search Engine Optimization and increasing conversions."
+	},
+	"clear-cache": "Clear Cache",
+	"cache-duration": "Cache Duration",
+	"cachehome": "Cache the homepage",
+	"compressfile": "Compress the files?",
+	"compressfile-tip": "Click to compress your HTML files through minification. Lighter files means faster load time!",
+	"cachehome-tip": "Click to cache the homepage. Disable to keep in cache only posts and pages.",
+	"cache-duration-tip": "Enter the cache duration in seconds (MIN:1, MAX:604800) (1 day = 86400 seconds)."
+}
