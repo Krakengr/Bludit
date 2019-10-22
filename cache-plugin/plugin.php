@@ -41,7 +41,7 @@ class pluginCache extends Plugin {
 		
 		$html .= '<div>';
 		$html .= '<label>' . $L->get('cache-duration') . '</label>';
-		$html .= '<input value="' .  $this->getValue('duration') . '" type="number" name="duration" id="jsduration" placeholder="Cache in Seconds" step="any" min="1" max="604800" required>'; //1 WEEK
+		$html .= '<input value="' .  $this->getValue('duration') . '" type="number" name="duration" id="jsduration" placeholder="Cache in Seconds" step="any" min="60" max="604800" required>'; //Max 1 WEEK
 		$html .= '<span class="tip">'.$L->get('cache-duration-tip').'</span>';
 		$html .= '</div>';
 		
