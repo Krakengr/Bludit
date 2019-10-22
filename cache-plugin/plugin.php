@@ -25,8 +25,8 @@ class pluginCache extends Plugin {
 		}
 		
 		$this->db['duration'] = $_POST['duration'];
-		$this->db['cachehome'] = $_POST['cachehome'];
-		$this->db['compressfile'] = $_POST['compressfile'];
+		$this->db['cachehome'] = (( $_POST['cachehome'] == 'true' ) ? true : false );
+		$this->db['compressfile'] = (( $_POST['compressfile'] == 'true' ) ? true : false );
 		
 		$this->rrmdir( $this->workspace() );
 						
@@ -96,7 +96,7 @@ class pluginCache extends Plugin {
 	
 	private function cache_message() {
 		
-		return '<!-- This website\'s performance optimized by Bludit Cache Plugin. Read more: https://g3ar.gr/en/blog/post/cache-plugin-bludit-cms/ - Debug: cached@' . time() . ' -->';
+		return '<!-- This website\'s performance optimized by Bludit Cache Plugin. Read more: https://g3ar.gr/en/blog/post/cache-plugin-bludit-cms/ - cached@' . time() . ' -->';
 	}
 	
 	private function is_allowed() 
@@ -108,7 +108,7 @@ class pluginCache extends Plugin {
 		if ( ( $url->whereAmI() == 'page' ) && !$url->notFound() )
 			$allow = true;
 		
-		elseif ( ( $url->whereAmI() == 'home' ) && ( $this->getValue('cachehome') ) && ( ( strpos( $_SERVER['REQUEST_URI'], 'page=' ) === false ) || ( $url->pageNumber() == 1 ) ) )
+		elseif ( ( $url->whereAmI() == 'home' ) && ( $this->getValue('cachehome') ) && ( $url->pageNumber() < 2 ) )
 			$allow = true;
 		
 		return $allow;
@@ -122,7 +122,7 @@ class pluginCache extends Plugin {
 		if ( !file_exists( $this->cache() ) && ( $this->is_allowed() ) )
 		{
 			
-			if ( ( $url->whereAmI() == 'home' ) && ( (strpos( $_SERVER['REQUEST_URI'], 'page=' ) !== false) || ( $url->whereAmI() == 'blog' ) || !$this->getValue('cachehome') ) )
+			if ( !$this->is_allowed() )
 			{
 				return false;
 			}
@@ -149,7 +149,7 @@ class pluginCache extends Plugin {
 			$cacheFile = $file;
 		
 		elseif ( ( $url->whereAmI() == 'home' ) && $this->getValue('cachehome') )
-			$cacheFile = 'home';
+			$cacheFile = 'home-' . ( ( $url->pageNumber() ) ? $url->pageNumber() : '' );
 		
 		elseif ( !$url->notFound() && ( $url->whereAmI() == 'page' ) )
 			$cacheFile = $url->slug();
