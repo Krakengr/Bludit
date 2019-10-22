@@ -96,7 +96,7 @@ class pluginCache extends Plugin {
 	
 	private function cache_message() {
 		
-		return '<!-- This website\'s performance optimized by Bludit Cache Plugin. Read more: ihackblg.blogspot.com - Debug: cached@' . time() . ' -->';
+		return '<!-- This website\'s performance optimized by Bludit Cache Plugin. Read more: https://g3ar.gr/en/blog/post/cache-plugin-bludit-cms/ - Debug: cached@' . time() . ' -->';
 	}
 	
 	private function is_allowed() 
