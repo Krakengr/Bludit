@@ -1,0 +1,8 @@
+{
+	"plugin-data":
+	{
+		"name": "Archive Page",
+		"description": "An easy way to add a sitemap on one of your pages. Just choose the page you want to add the sitemap. This will automatically generate a sitemap in this page."
+	},
+	"select-a-page-archive": "Select a Page to add the Archive data"
+}
