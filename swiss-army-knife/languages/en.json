@@ -1,0 +1,23 @@
+{
+	"plugin-data":
+	{
+		"name": "Swiss Army Knife",
+		"description": "Swiss Army Knife for Bludit is a tool which allows you to perform some useful operations on your Bludit site."
+	},
+	"copy-external": "Copy External Images",
+	"copy-info": "Check this if you want to copy any external images found in your posts",
+	"compress": "Compress Cover Images?",
+	"compress-info": "Check this if you want to compress cover image",
+	"https-redir": "HTTPS Redirection (SSL)",
+	"https-info": "Check this if you want to setup a redirection to the https version of an URL when anyone tries to access the non-https version. Only check it if you have installed SSL certificate on your site and HTTPS is working correctly",
+	"header-code": "HTML Code in the Header",
+	"header-info": "Add HMTL/Javascript code in the header",
+	"footer-code": "HTML Code in the footer",
+	"beauty-post": "Add paragraphs in your posts",
+	"sidebar-code": "HTML Code in the sidebar",
+	"beauty-info": "Check this if you want to auto add paragraphs in your posts. Useful if you use a Markdown editor",
+	"footer-info": "Add HMTL/Javascript code in the footer",
+	"sidebar-info": "Add HMTL/Javascript code in the sidebar",
+	"exclude-category": "Exclude Category from Blog",
+	"exclude-info": "Exclude categories from blog and home page. CTRL+click to add or remove categories"
+}
