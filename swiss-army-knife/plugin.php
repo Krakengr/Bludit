@@ -4,12 +4,6 @@ class pluginSwissArmyKnife extends Plugin {
 
 	public function init()
 	{
-		ini_set("display_errors", 1);
-	ini_set('display_startup_errors', 1);
-	ini_set("html_errors", 1);
-	ini_set('log_errors', 1);
-	error_reporting(E_ALL | E_STRICT | E_NOTICE);
-
 		define('DB_IMG', $this->workspace() . 'db.php' );
 
 		if ( !file_exists( DB_IMG ) )
