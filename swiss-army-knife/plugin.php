@@ -19,6 +19,7 @@ class pluginSwissArmyKnife extends Plugin {
 			'compress_img'=>false,
 			'https_redir'=>false,
 			'beauty_post'=>false,
+			'auto_embed'=>false,
 			'header_code'=>'',
 			'categories'=>array(),
 			'sidebar_code'=>'',
@@ -56,6 +57,12 @@ class pluginSwissArmyKnife extends Plugin {
 		$html .= '<label>'.$L->get('beauty-post').'</label>';
 		$html .= '<input type="checkbox" id="jsbeauty_post" name="beauty_post" ' . ( $this->getValue('beauty_post') == 1 ? 'checked="checked"' : '' ) . ' value="1" />';
 		$html .= '<span class="tip">'.$L->get('beauty-info').'</small></span>';
+		$html .= '</div>';
+		
+		$html .= '<div>';
+		$html .= '<label>'.$L->get('auto-embed').'</label>';
+		$html .= '<input type="checkbox" id="jsauto_embed" name="auto_embed" ' . ( $this->getValue('auto_embed') == 1 ? 'checked="checked"' : '' ) . ' value="1" />';
+		$html .= '<span class="tip">'.$L->get('autoembed-info').'</small></span>';
 		$html .= '</div>';
 
 		$html .= '<div>';
@@ -103,6 +110,7 @@ class pluginSwissArmyKnife extends Plugin {
 		$this->db['compress_img'] = ( !empty( $_POST['compress_img'] ) ? 1 : 0 );
 		$this->db['beauty_post'] = ( !empty( $_POST['beauty_post'] ) ? 1 : 0 );
 		$this->db['https_redir'] = ( !empty( $_POST['https_redir'] ) ? 1 : 0 );
+		$this->db['auto_embed'] = ( !empty( $_POST['auto_embed'] ) ? 1 : 0 );
 		$this->db['header_code'] = Sanitize::html( $_POST['header_code'] );
 		$this->db['footer_code'] = Sanitize::html( $_POST['footer_code'] );
 
@@ -165,16 +173,23 @@ class pluginSwissArmyKnife extends Plugin {
 	{
 		
 		global $page, $url;
-
-		if ( $this->getValue('beauty_post') && !$url->notFound() && ( $url->whereAmI() == 'page' ) )
+		
+		if ( !$url->notFound() && ( $url->whereAmI() == 'page' ) )
 		{
-			require ( $this->phpPath() . 'php' . DS . 'functions.php' );
-
-			$content = wpautop( $page->content() );
-
-			$page->setField('content', $content);
-
-			//return;
+			if ( $this->getValue('beauty_post') || $this->getValue('auto_embed') )
+			{
+				require ( $this->phpPath() . 'php' . DS . 'functions.php' );
+				
+				$content = $page->content();
+				
+				if ( $this->getValue('auto_embed') )
+					$content = url2embed( $content );
+				
+				if ( $this->getValue('beauty_post') )
+					$content = wpautop( $content );
+				
+				$page->setField('content', $content);
+			}
 		}
 
 		if ( !empty( $this->getValue( 'categories' ) ) && ( $url->whereAmI() == 'home' ) )
