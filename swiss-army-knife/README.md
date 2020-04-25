@@ -6,5 +6,6 @@ Copy External Images<br />
 Compress Cover Images<br />
 HTTPS Redirection (SSL)<br />
 Automatically Convert Line Break in Posts<br />
+Automatically Convert Video URLs to Embed Code<br />
 Add HTML Code in header, footer, sidebar<br />
 Exclude Categories from homepage
