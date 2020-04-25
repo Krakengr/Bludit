@@ -1,0 +1,28 @@
+{
+	"plugin-data":
+	{
+		"name": "Blogger to Bludit Converter",
+		"description": "Convert Posts, Pages and Categories from Blogger to Bludit."
+	},
+
+	"convert-xml": "Begin the conversion",
+	"xml-name": "Filename",
+	"xml-file": "Enter the filename of the blogger exported XML file you uploaded in 'uploads' folder, eg 'blogger.name.xml'",
+	"disqus-empty": "Leave blank if you didn't choose to copy the comments in the previous step. Otherwise enter your disqus ID.",
+	"disqus-id": "Disqus ID",
+	"copy-comments": "Copy Comments?",
+    "set-cover-image": "Set Cover Image?",
+    "disable-cover-image": "Disable",
+    "enable-url-cover-image": "As an external URL",
+    "enable-local-cover-image": "As a local file",
+	"disable-comments": "Disable",
+	"internal-comments": "Internal Comments",
+	"disqus-comments": "Disqus Comments",
+	"url": "Your Old URL",
+	"url-info": "Enter the URL of your wordpress blog, to automatically convert the in post URLs for each page and post (eg https//:www.mysite.com)",
+	"success": "All Done. Disable the plugin now if you are ready...",
+	"no-file-found": "The XML file not found",
+	"no-posts-found": "There is nothing to convert",
+	"locked": "The form is now locked for changes and is ready for the conversion to begin. If you want to make a change, disable and enable the plugin again.", 
+	"file-error": "Failed loading XML"
+}
